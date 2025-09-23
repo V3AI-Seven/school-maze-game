@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 const speed = 10
-const sprintSpeed = 15
+const sprint_speed = 15
 const mouse_sensitivity = 0.002
 
 
@@ -16,25 +16,25 @@ func _unhandled_input(event):
 		$Marker3D/Camera3D.rotation.x = clampf($Marker3D/Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
 
 func _physics_process(_delta):
-	var targetVelocity = Vector3.ZERO
-	var worldTargetVelocity = Vector3.ZERO
-	var targetSpeed = speed
+	var target_velocity = Vector3.ZERO
+	var world_target_velocity = Vector3.ZERO
+	var target_speed = speed
 	
 	if Input.is_key_pressed(KEY_SHIFT):
-		targetSpeed = sprintSpeed
+		target_speed = sprint_speed
 
 	if Input.is_key_pressed(KEY_W):
-		targetVelocity.z -= targetSpeed
+		target_velocity.z -= target_speed
 
 	if Input.is_key_pressed(KEY_S):
-		targetVelocity.z += targetSpeed
+		target_velocity.z += target_speed
 
 	if Input.is_key_pressed(KEY_A):
-		targetVelocity.x -= targetSpeed
+		target_velocity.x -= target_speed
 
 	if Input.is_key_pressed(KEY_D):
-		targetVelocity.x += targetSpeed
-		
-	worldTargetVelocity = targetVelocity.rotated(Vector3.UP, rotation.y)
-	velocity = worldTargetVelocity
+		target_velocity.x += target_speed
+
+	world_target_velocity = target_velocity.rotated(Vector3.UP, rotation.y)
+	velocity = world_target_velocity
 	move_and_slide()

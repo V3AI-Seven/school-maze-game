@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://i4oylgxamlif"]
+[gd_scene load_steps=5 format=3 uid="uid://i4oylgxamlif"]
 
 [ext_resource type="PackedScene" uid="uid://dpp2l2v8ykxt" path="res://scenes/template_objects/scalable_box.tscn" id="1_tg0fq"]
 [ext_resource type="Script" uid="uid://nlh36ifwdd3u" path="res://scripts/mainGameScripts/player.gd" id="2_2avk5"]
+[ext_resource type="PackedScene" uid="uid://drcrhgijfrqo" path="res://scenes/template_objects/vanishing_box.tscn" id="3_n4o3k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rgi5"]
 
@@ -26,6 +27,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6939142, 0)
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 107.95352, 0)
-omni_range = 173.879
+transform = Transform3D(0.9985395, 0, -0.054026533, 0, 1, 0, 0.054026533, 0, 0.9985395, -0.28990936, 107.95352, 0.15808105)
+omni_range = 228.0751
 omni_attenuation = 0.0
+
+[node name="vanishingBox" parent="." instance=ExtResource("3_n4o3k")]
+transform = Transform3D(2.6404576, 0, 0, 0, 2.9142203, 0, 0, 0, 0.18671596, -5.9994755, 2.3311853, 0)

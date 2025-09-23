@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://drcrhgijfrqo"]
+
+[ext_resource type="Script" uid="uid://blj5wnyf20c" path="res://scenes/template_objects/vanishing_box.gd" id="1_qcpt8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwjsw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sgew4"]
+
+[node name="vanishingBox" type="Node3D"]
+transform = Transform3D(2.6404576, 0, 0, 0, 2.9142203, 0, 0, 0, 0.18671596, 0, 0, 0)
+script = ExtResource("1_qcpt8")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+aabb = AABB(-0.49512517, -0.6017631, -0.63724446, 0.99025035, 1.2035263, 1.2744889)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_hwjsw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.2045612, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_sgew4")
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="vanish_event"]
