@@ -19,8 +19,11 @@ script = ExtResource("2_2avk5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player/CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_0rgi5")
 
-[node name="Camera3D" type="Camera3D" parent="player/CharacterBody3D"]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0.8220992, 0)
+[node name="Marker3D" type="Marker3D" parent="player/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6939142, 0)
+
+[node name="Camera3D" type="Camera3D" parent="player/CharacterBody3D/Marker3D"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 107.95352, 0)

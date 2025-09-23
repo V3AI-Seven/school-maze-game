@@ -1,2 +1,3 @@
 res://scenes/game/maze.tscn
 res://export_presets.cfg
+res://player.gd
