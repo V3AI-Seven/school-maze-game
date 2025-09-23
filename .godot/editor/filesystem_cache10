@@ -1,0 +1,11 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1758656336
+icon.svg::CompressedTexture2D::5719076495987887130::1758656300::1758656337::1::::<><><>0<>0<>30f75df3d4289488b28976c69212521a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+player.gd::GDScript::935639784606769520::1758656300::0::1::::<>CharacterBody3D<><>0<>0<><>::
+README.md::TextFile::-1::1758656300::0::1::::<><><>0<>0<><>::
+::res://scenes/::1758656300
+::res://scenes/game/::1758656300
+maze.tscn::PackedScene::622271188995618049::1758656300::0::1::::<><><>0<>0<><>::uid://dpp2l2v8ykxt::::res://scenes/template_objects/scalable_box.tscn<>uid://nlh36ifwdd3u::::res://player.gd
+::res://scenes/template_objects/::1758656300
+player.tscn::PackedScene::4059084239254672616::1758656300::0::1::::<><><>0<>0<><>::uid://nlh36ifwdd3u::::res://player.gd
+scalable_box.tscn::PackedScene::242491789017692409::1758656300::0::1::::<><><>0<>0<><>::
