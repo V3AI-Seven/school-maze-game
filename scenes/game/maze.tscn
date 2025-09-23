@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://i4oylgxamlif"]
 
 [ext_resource type="PackedScene" uid="uid://dpp2l2v8ykxt" path="res://scenes/template_objects/scalable_box.tscn" id="1_tg0fq"]
-[ext_resource type="Script" uid="uid://nlh36ifwdd3u" path="res://player.gd" id="2_2avk5"]
+[ext_resource type="Script" uid="uid://nlh36ifwdd3u" path="res://scripts/mainGameScripts/player.gd" id="2_2avk5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rgi5"]
 

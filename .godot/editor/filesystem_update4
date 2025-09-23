@@ -1,3 +1,5 @@
 res://scenes/game/maze.tscn
-res://export_presets.cfg
-res://player.gd
+res://scenes/template_objects/player.tscn
+res://scenes/template_objects/character_body_3d.gd
+res://scripts/mainGameScripts/player.gd
+res://scenes/template_objects/playerScripts/player.gd
