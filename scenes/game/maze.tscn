@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://i4oylgxamlif"]
+
+[ext_resource type="PackedScene" uid="uid://dpp2l2v8ykxt" path="res://scenes/template_objects/scalable_box.tscn" id="1_tg0fq"]
+[ext_resource type="Script" uid="uid://nlh36ifwdd3u" path="res://player.gd" id="2_2avk5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rgi5"]
+
+[node name="game" type="Node3D"]
+
+[node name="scalableBox" parent="." instance=ExtResource("1_tg0fq")]
+transform = Transform3D(128, 0, 0, 0, 1, 0, 0, 0, 128, 0, 0, 0)
+
+[node name="player" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6664679, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="player"]
+script = ExtResource("2_2avk5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player/CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_0rgi5")
+
+[node name="Camera3D" type="Camera3D" parent="player/CharacterBody3D"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0.8220992, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 107.95352, 0)
+omni_range = 173.879
+omni_attenuation = 0.0
