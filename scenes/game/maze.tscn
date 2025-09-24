@@ -1,10 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://i4oylgxamlif"]
+[gd_scene load_steps=9 format=3 uid="uid://i4oylgxamlif"]
 
 [ext_resource type="PackedScene" uid="uid://dpp2l2v8ykxt" path="res://scenes/template_objects/scalable_box.tscn" id="1_tg0fq"]
 [ext_resource type="Script" uid="uid://nlh36ifwdd3u" path="res://scripts/mainGameScripts/player.gd" id="2_2avk5"]
 [ext_resource type="PackedScene" uid="uid://drcrhgijfrqo" path="res://scenes/template_objects/vanishing_box.tscn" id="3_n4o3k"]
+[ext_resource type="Texture2D" uid="uid://bwbhaian54dwg" path="res://images/maze_square_10_10_581613901.svg" id="4_k57tn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rgi5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdhq5"]
+albedo_texture = ExtResource("4_k57tn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5lum"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1ms6b"]
+material = SubResource("StandardMaterial3D_k5lum")
+size = Vector2(128, 128)
 
 [node name="game" type="Node3D"]
 
@@ -28,8 +38,29 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(0.9985395, 0, -0.054026533, 0, 1, 0, 0.054026533, 0, 0.9985395, -0.28990936, 107.95352, 0.15808105)
-omni_range = 228.0751
+omni_range = 206.72214
 omni_attenuation = 0.0
 
 [node name="vanishingBox" parent="." instance=ExtResource("3_n4o3k")]
 transform = Transform3D(2.6404576, 0, 0, 0, 2.9142203, 0, 0, 0, 0.18671596, -5.9994755, 2.3311853, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.8264136, 0)
+material_override = SubResource("StandardMaterial3D_fdhq5")
+mesh = SubResource("PlaneMesh_1ms6b")
+
+[node name="walls" type="Node3D" parent="."]
+
+[node name="outerWalls" type="Node3D" parent="walls"]
+
+[node name="xPositiveWall1" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(1, 0, 0, 0, 10.440001, 0, 0, 0, -67.45601, 64, 5, 32)
+
+[node name="xPositiveWall2" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(1, 0, 0, 0, 10.296, 0, 0, 0, -68.159996, 64, 5, -46)
+
+[node name="zPositiveWall" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(135.15001, 0, 0, 0, 12.121199, 0, 0, 0, 1, 0, 4, -64)
+
+[node name="xNegativeWall" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(1, 0, 0, 0, 10.08, 0, 0, 0, -126.27521, -64, 5, 0)
