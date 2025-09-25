@@ -1,4 +1,5 @@
 Node3D
+DirectionalLight3D
 MeshInstance3D
 VisibleOnScreenNotifier3D
 Marker3D

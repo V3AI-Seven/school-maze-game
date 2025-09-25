@@ -1,2 +1,3 @@
-res://scenes/template_objects/vanishing_box.tscn
 res://scenes/game/maze.tscn
+res://scenes/template_objects/vanishing_box.tscn
+res://scenes/game/light_control.gd

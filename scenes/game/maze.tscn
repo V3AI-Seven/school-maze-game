@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://i4oylgxamlif"]
+[gd_scene load_steps=13 format=3 uid="uid://i4oylgxamlif"]
 
 [ext_resource type="PackedScene" uid="uid://dpp2l2v8ykxt" path="res://scenes/template_objects/scalable_box.tscn" id="1_tg0fq"]
 [ext_resource type="Script" uid="uid://nlh36ifwdd3u" path="res://scripts/mainGameScripts/player.gd" id="2_2avk5"]
 [ext_resource type="PackedScene" uid="uid://drcrhgijfrqo" path="res://scenes/template_objects/vanishing_box.tscn" id="3_n4o3k"]
 [ext_resource type="Texture2D" uid="uid://bwbhaian54dwg" path="res://images/maze_square_10_10_581613901.svg" id="4_k57tn"]
+[ext_resource type="Script" uid="uid://blj5wnyf20c" path="res://scripts/extraGameScripts/vanishing_box.gd" id="5_fdhq5"]
+[ext_resource type="Script" uid="uid://cm8rp18ehiqci" path="res://scripts/mainGameScripts/light_control.gd" id="5_k5lum"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rgi5"]
 
@@ -15,6 +17,10 @@ albedo_texture = ExtResource("4_k57tn")
 [sub_resource type="PlaneMesh" id="PlaneMesh_1ms6b"]
 material = SubResource("StandardMaterial3D_k5lum")
 size = Vector2(128, 128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwjsw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sgew4"]
 
 [node name="game" type="Node3D"]
 
@@ -36,15 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6939142, 0)
 [node name="Camera3D" type="Camera3D" parent="player/CharacterBody3D/Marker3D"]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(0.9985395, 0, -0.054026533, 0, 1, 0, 0.054026533, 0, 0.9985395, -0.28990936, 107.95352, 0.15808105)
-omni_range = 206.72214
-omni_attenuation = 0.0
-
-[node name="vanishingBox" parent="." instance=ExtResource("3_n4o3k")]
-transform = Transform3D(2.6404576, 0, 0, 0, 2.9142203, 0, 0, 0, 0.18671596, -5.9994755, 2.3311853, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="maze map" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.8264136, 0)
 material_override = SubResource("StandardMaterial3D_fdhq5")
 mesh = SubResource("PlaneMesh_1ms6b")
@@ -52,6 +50,7 @@ mesh = SubResource("PlaneMesh_1ms6b")
 [node name="walls" type="Node3D" parent="."]
 
 [node name="outerWalls" type="Node3D" parent="walls"]
+visible = false
 
 [node name="xPositiveWall1" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
 transform = Transform3D(1, 0, 0, 0, 10.440001, 0, 0, 0, -67.45601, 64, 5, 32)
@@ -59,8 +58,57 @@ transform = Transform3D(1, 0, 0, 0, 10.440001, 0, 0, 0, -67.45601, 64, 5, 32)
 [node name="xPositiveWall2" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
 transform = Transform3D(1, 0, 0, 0, 10.296, 0, 0, 0, -68.159996, 64, 5, -46)
 
-[node name="zPositiveWall" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
-transform = Transform3D(135.15001, 0, 0, 0, 12.121199, 0, 0, 0, 1, 0, 4, -64)
-
 [node name="xNegativeWall" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
 transform = Transform3D(1, 0, 0, 0, 10.08, 0, 0, 0, -126.27521, -64, 5, 0)
+
+[node name="zPositiveWall" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(136.06299, 0, 0, 0, 13.613601, 0, 0, 0, 1, 0, 4, 63)
+
+[node name="zNegativeWall" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(135.15001, 0, 0, 0, 12.121199, 0, 0, 0, 1, 0, 4, -64)
+
+[node name="innerWalls" type="Node3D" parent="walls"]
+
+[node name="wall1" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(1.025, 0, 0, 0, 9.4847765, 0, 0, 0, 63, 13, 5.125, -6)
+
+[node name="scalableBox" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(0.945, 0, 0, 0, 10.651095, 0, 0, 0, 40, -13.055, 4.725, 6)
+
+[node name="innerVanishingWalls" type="Node3D" parent="walls"]
+
+[node name="vanishingWall1" type="Node3D" parent="walls/innerVanishingWalls"]
+transform = Transform3D(25.740002, 0, 0, 0, 8.25, 0, 0, 0, 1, 0, 5, 13)
+script = ExtResource("5_fdhq5")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="walls/innerVanishingWalls/vanishingWall1"]
+aabb = AABB(-0.5, -0.663, -0.605, 1, 1.327, 1.21)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="walls/innerVanishingWalls/vanishingWall1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/innerVanishingWalls/vanishingWall1/StaticBody3D"]
+shape = SubResource("BoxShape3D_hwjsw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/innerVanishingWalls/vanishingWall1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.2045612, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_sgew4")
+
+[node name="lights" type="Node3D" parent="."]
+script = ExtResource("5_k5lum")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="lights"]
+transform = Transform3D(0.9659259, -8.579145e-16, 0.25881907, -0.25881907, -4.371139e-08, 0.9659258, 1.13133405e-08, -1, -4.222196e-08, 71, 57, 0)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="lights"]
+transform = Transform3D(0.9659259, -8.579145e-16, -0.25881904, 0.25881904, -4.371139e-08, 0.9659259, -1.13133405e-08, -1, -4.222196e-08, -77.999985, 57, 0)
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="lights"]
+transform = Transform3D(-3.8365258e-08, 1, 2.5706756e-08, 0.2588191, -1.4901157e-08, 0.9659258, 0.9659259, 4.3711392e-08, -0.2588191, 7.6293945e-06, 56.999996, -64)
+
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="lights"]
+transform = Transform3D(-4.6078668e-08, 1, 3.0800746e-09, -0.258819, -1.4901159e-08, 0.9659259, 0.9659259, 4.3711395e-08, 0.258819, 1.5535121e-06, 57, 74.99998)
+
+[node name="vanishingBox" parent="." instance=ExtResource("3_n4o3k")]
+transform = Transform3D(2.6404576, 0, 0, 0, 2.9142203, 0, 0, 0, 0.18671596, -5.9994755, 2.3311853, 0)
+
+[connection signal="screen_entered" from="walls/innerVanishingWalls/vanishingWall1/VisibleOnScreenNotifier3D" to="walls/innerVanishingWalls/vanishingWall1" method="vanish_event"]
