@@ -1,3 +1,7 @@
+Label
+CanvasLayer
+OptionButton
+Button
 Node3D
 DirectionalLight3D
 MeshInstance3D

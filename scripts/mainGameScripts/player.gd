@@ -20,6 +20,11 @@ func _physics_process(_delta):
 	var world_target_velocity = Vector3.ZERO
 	var target_speed = speed
 	
+	if Input.is_key_pressed(KEY_ESCAPE):
+		Game.timer_on = false
+		Game.game_won = false
+		get_tree().change_scene_to_file("res://scenes/menus/finish_screen.tscn")
+	
 	if Input.is_key_pressed(KEY_SHIFT):
 		target_speed = sprint_speed
 

@@ -1,3 +1,8 @@
 res://scenes/game/maze.tscn
-res://scenes/template_objects/vanishing_box.tscn
-res://scenes/game/light_control.gd
+res://scripts/mainGameScripts/light_control.gd
+res://scenes/menus/main_menu.tscn
+res://scripts/globals/game.gd
+res://scripts/extraGameScripts/main_menu.gd
+res://scripts/mainGameScripts/player.gd
+res://scripts/extraGameScripts/finish_screen.gd
+res://scenes/menus/finish_screen.tscn

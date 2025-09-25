@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Changing Maze"
-run/main_scene="uid://i4oylgxamlif"
+run/main_scene="uid://dip6hiod3nv74"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Game="*res://scripts/globals/game.gd"
 
 [dotnet]
 
