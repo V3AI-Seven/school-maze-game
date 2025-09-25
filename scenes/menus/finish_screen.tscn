@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://pfhucbqu8f6h"]
+[gd_scene load_steps=4 format=3 uid="uid://pfhucbqu8f6h"]
 
 [ext_resource type="Script" uid="uid://6akbxqbyowe4" path="res://scripts/extraGameScripts/finish_screen.gd" id="1_l2yig"]
+[ext_resource type="AudioStream" uid="uid://cqr4y5jobkhmf" path="res://sounds/success-fanfare-trumpets-6185.mp3" id="2_exe03"]
+[ext_resource type="AudioStream" uid="uid://dc2x5m7wn8xo1" path="res://sounds/cartoon-fail-trumpet-278822.mp3" id="3_87cp2"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,3 +32,11 @@ theme_override_font_sizes/font_size = 32
 text = "Congratulations! You have wasted 0:00:00 minutes of your life!"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="SuccessFanfareTrumpets6185" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(576, 288)
+stream = ExtResource("2_exe03")
+
+[node name="CartoonFailTrumpet278822" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(576, 304)
+stream = ExtResource("3_87cp2")

@@ -27,3 +27,4 @@ project/assembly_name="Changing Maze"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+occlusion_culling/use_occlusion_culling=true

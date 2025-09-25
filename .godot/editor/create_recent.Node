@@ -1,3 +1,7 @@
+AudioStreamPlayer2D      - Matches the "sound" keyword.
+CollisionShape3D
+Area3D
+OccluderInstance3D
 Label
 CanvasLayer
 OptionButton

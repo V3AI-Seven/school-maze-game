@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://i4oylgxamlif"]
+[gd_scene load_steps=23 format=3 uid="uid://i4oylgxamlif"]
 
 [ext_resource type="Script" uid="uid://cv64cpu3smqio" path="res://scripts/mainGameScripts/maze.gd" id="1_1ms6b"]
 [ext_resource type="PackedScene" uid="uid://dpp2l2v8ykxt" path="res://scenes/template_objects/scalable_box.tscn" id="1_tg0fq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bwbhaian54dwg" path="res://images/maze_square_10_10_581613901.svg" id="4_k57tn"]
 [ext_resource type="Script" uid="uid://blj5wnyf20c" path="res://scripts/extraGameScripts/vanishing_box.gd" id="5_fdhq5"]
 [ext_resource type="Script" uid="uid://cm8rp18ehiqci" path="res://scripts/mainGameScripts/light_control.gd" id="5_k5lum"]
+[ext_resource type="ArrayOccluder3D" uid="uid://hlbht1qlw6fj" path="res://scenes/game/maze_occlusion_data.occ" id="8_xurqk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rgi5"]
 
@@ -27,19 +28,32 @@ size = Vector2(128, 128)
 [sub_resource type="BoxMesh" id="BoxMesh_sgew4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k5lum"]
+size = Vector3(0.5736923, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ms6b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ms6b"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xurqk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xurqk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_msd3h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_msd3h"]
+size = Vector3(29, 12, 32)
 
 [node name="game" type="Node3D"]
 script = ExtResource("1_1ms6b")
 
-[node name="scalableBox" parent="." instance=ExtResource("1_tg0fq")]
+[node name="floor" parent="." instance=ExtResource("1_tg0fq")]
 transform = Transform3D(128, 0, 0, 0, 1, 0, 0, 0, 128, 0, 0, 0)
 
 [node name="player" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6664679, 0)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="player"]
+collision_layer = 3
 script = ExtResource("2_2avk5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player/CharacterBody3D"]
@@ -70,7 +84,7 @@ mesh = SubResource("PlaneMesh_1ms6b")
 [node name="outerWalls" type="Node3D" parent="walls"]
 
 [node name="xPositiveWall1" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
-transform = Transform3D(1, 0, 0, 0, 10.440001, 0, 0, 0, -67.45601, 64, 5, 32)
+transform = Transform3D(1, 0, 0, 0, 10.440001, 0, 0, 0, -65.04735, 64, 5, 32)
 
 [node name="xPositiveWall2" parent="walls/outerWalls" instance=ExtResource("1_tg0fq")]
 transform = Transform3D(1, 0, 0, 0, 10.296, 0, 0, 0, -68.159996, 64, 5, -46)
@@ -116,6 +130,87 @@ transform = Transform3D(1, 0, 0, 0, 9.194346, 0, 0, 0, 27.014614, -12.1566925, 5
 [node name="wall10" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
 transform = Transform3D(1, 0, 0, 0, 10.070001, 0, 0, 0, 51.319897, 50.810535, 5, -25.125008)
 
+[node name="wall11" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(51.06158, 0, 0, 0, 9.575999, 0, 0, 0, 1, 25.354733, 5, -51)
+
+[node name="wall12" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(1, 0, 0, 0, 9.305999, 0, 0, 0, 13.43, 25.158497, 5, -44.019817)
+
+[node name="wall13" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(0.945, 0, 0, 0, 10.651095, 0, 0, 0, 38.370018, -50.222126, 4.725, 32.046703)
+
+[node name="wall14" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(12.300001, 0, 0, 0, 9.575999, 0, 0, 0, 1, -44.609108, 5, 0)
+
+[node name="wall15" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-5.376501e-07, 0, -1, 0, 9.575999, 0, 12.300001, 0, -4.371139e-08, -50.609108, 5, -5.5252943)
+
+[node name="wall16" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-12.300001, 0, 8.742278e-08, 0, 9.575999, 0, -1.0753002e-06, 0, -1, -44.0703, 5, 25.474705)
+
+[node name="wall17" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-62.931522, 0, 8.742278e-08, 0, 9.575999, 0, -5.5016485e-06, 0, -1, -6.6747932, 5, 37.992867)
+
+[node name="wall18" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(0.99999994, 0, -2.2737368e-13, 0, 10.070001, 0, 0, 0, 39.490295, 25.368187, 5, 32.08006)
+
+[node name="wall19" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-5.376501e-07, 0, -1, 0, 9.575999, 0, 12.300001, 0, -4.371139e-08, -50.609108, 5, -31.352688)
+
+[node name="wall20" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-13.638215, 0, 8.742278e-08, 0, 9.575999, 0, -1.1922907e-06, 0, -1, -57.03003, 5, -25.352688)
+
+[node name="wall21" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-4.371139e-08, 0, -26.32522, 0, 9.194346, 0, 1, 0, -1.1507119e-06, -37.782097, 5, -38)
+
+[node name="wall22" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-12.425078, 0, 8.742278e-08, 0, 9.575999, 0, -1.0862349e-06, 0, -1, -18.71318, 5, -24.907965)
+
+[node name="wall24" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-13.246173, 0, 8.742278e-08, 0, 9.575999, 0, -1.1580173e-06, 0, -1, -31.499775, 5, -12.858816)
+
+[node name="wall23" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-5.376501e-07, 0, -1, 0, 9.575999, 0, 12.300001, 0, -4.371139e-08, -25.37638, 5, -19.446335)
+
+[node name="wall25" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-62.931522, 0, 8.742278e-08, 0, 9.575999, 0, -5.5016485e-06, 0, -1, -18.376774, 5, 50.72737)
+
+[node name="wall26" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(0.945, 0, 0, 0, 10.651095, 0, 0, 0, 40, -37.979088, 4.725, -6.8062954)
+
+[node name="wall27" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-5.376501e-07, 0, -1, 0, 9.575999, 0, 12.300001, 0, -4.371139e-08, -38.122986, 5, -56.707165)
+
+[node name="wall28" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-5.376501e-07, 0, -1, 0, 9.575999, 0, 12.300001, 0, -4.371139e-08, -25.382042, 5, -44.47586)
+
+[node name="wall29" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-12.300001, 0, 8.742278e-08, 0, 9.575999, 0, -1.0753002e-06, 0, -1, -44.493454, 5, -51.101154)
+
+[node name="wall30" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(0.99999994, 0, -1.4793571e-13, 0, 10.070001, 0, 0, 0, 25.6935, 37.98172, 5, 38.0683)
+
+[node name="wall31" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(0.99999994, 0, -1.4793571e-13, 0, 10.070001, 0, 0, 0, 25.6935, 50.722664, 5, 25.709587)
+
+[node name="wall32" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(0.99999994, 0, -1.4793571e-13, 0, 10.070001, 0, 0, 0, 25.6935, -25.365868, 5, 25.263758)
+
+[node name="wall33" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-4.3711385e-08, 0, -25.6935, 0, 10.070001, 0, 0.99999994, 0, -1.1230987e-06, 38.441772, 5, 12.862167)
+
+[node name="wall34" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-4.3711385e-08, 0, -25.6935, 0, 10.070001, 0, 0.99999994, 0, -1.1230987e-06, 51.13005, 5, 50.38814)
+
+[node name="wall35" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(12.300001, 0, 0, 0, 9.575999, 0, 0, 0, 1, -31.995773, 5, 12.868368)
+
+[node name="wall36" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-5.376501e-07, 0, -1, 0, 9.575999, 0, 12.300001, 0, -4.371139e-08, 0.039787292, 5, 31.65614)
+
+[node name="wall37" parent="walls/innerWalls" instance=ExtResource("1_tg0fq")]
+transform = Transform3D(-12.654993, 0, 8.742278e-08, 0, 10.099759, 0, -1.1063347e-06, 0, -1, 57.396534, 5, 0.24372101)
+
 [node name="innerVanishingWalls" type="Node3D" parent="walls"]
 
 [node name="vanishingWall1" type="Node3D" parent="walls/innerVanishingWalls"]
@@ -123,9 +218,11 @@ transform = Transform3D(25.740002, 0, 0, 0, 8.25, 0, 0, 0, 1, 0, 5, 13)
 script = ExtResource("5_fdhq5")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="walls/innerVanishingWalls/vanishingWall1"]
+layers = 2
 aabb = AABB(-0.5, -0.663, -0.605, 1, 1.327, 1.21)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="walls/innerVanishingWalls/vanishingWall1"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="walls/innerVanishingWalls/vanishingWall1/StaticBody3D"]
 shape = SubResource("BoxShape3D_hwjsw")
@@ -139,11 +236,13 @@ transform = Transform3D(11.55, 0, 0, 0, 7.638401, 0, 0, 0, 1, -6, 5, -25)
 script = ExtResource("5_fdhq5")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="walls/innerVanishingWalls/vanishingWall2"]
+layers = 2
 aabb = AABB(-0.498185, -0.66325575, -0.60489, 0.99637, 1.3265115, 1.20978)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="walls/innerVanishingWalls/vanishingWall2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="walls/innerVanishingWalls/vanishingWall2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.9999993, 0, 0, 0, 1, 0.01701349, 0, 0)
 shape = SubResource("BoxShape3D_k5lum")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="walls/innerVanishingWalls/vanishingWall2/StaticBody3D"]
@@ -155,6 +254,7 @@ transform = Transform3D(25.482597, 0, 0, 0, 7.9200006, 0, 0, 0, 1, 25.761173, 5,
 script = ExtResource("5_fdhq5")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="walls/innerVanishingWalls/vanishingWall3"]
+layers = 2
 aabb = AABB(-0.5087091, -0.66325575, -0.60489, 1.0174181, 1.3265115, 1.20978)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="walls/innerVanishingWalls/vanishingWall3"]
@@ -167,19 +267,56 @@ transform = Transform3D(1, 0, 0, 0, 1.2045612, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_1ms6b")
 
 [node name="vanishingWall4" type="Node3D" parent="walls/innerVanishingWalls"]
-transform = Transform3D(25.482597, 0, 0, 0, 7.9200006, 0, 0, 0, 1, 50.462315, 5.3097086, 0.15980864)
+transform = Transform3D(25.482597, 0, 0, 0, 7.9200006, 0, 0, 0, 1, 49.15121, 5.3097086, 0.15980864)
 script = ExtResource("5_fdhq5")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="walls/innerVanishingWalls/vanishingWall4"]
-aabb = AABB(-0.5087091, -0.66325575, -0.60489, 1.0174181, 1.3265115, 1.20978)
+layers = 2
+aabb = AABB(-0.46391067, -0.66325575, -0.60489, 0.5323135, 1.3265115, 1.20978)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="walls/innerVanishingWalls/vanishingWall4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="walls/innerVanishingWalls/vanishingWall4/StaticBody3D"]
+transform = Transform3D(0.9999981, 0, 0, 0, 0.9999925, 0, 0, 0, 0.9999952, -0.1743164, 0, 0)
 shape = SubResource("BoxShape3D_k5lum")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="walls/innerVanishingWalls/vanishingWall4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1.2045612, 0, 0, 0, 1, 0.018105092, 0, 0)
+transform = Transform3D(0.52310824, 0, 0, 0, 1.2045612, 0, 0, 0, 1, -0.18035091, 0, 0)
+mesh = SubResource("BoxMesh_1ms6b")
+
+[node name="vanishingWall5" type="Node3D" parent="walls/innerVanishingWalls"]
+transform = Transform3D(1, 0, 0, 0, 7.4249997, 0, 0, 0, 13.922999, 13, 5, 57)
+script = ExtResource("5_fdhq5")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="walls/innerVanishingWalls/vanishingWall5"]
+layers = 2
+aabb = AABB(-0.633865, -0.66325575, -0.5092558, 1.26773, 1.3265115, 1.0185117)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="walls/innerVanishingWalls/vanishingWall5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/innerVanishingWalls/vanishingWall5/StaticBody3D"]
+shape = SubResource("BoxShape3D_1ms6b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/innerVanishingWalls/vanishingWall5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.2045612, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_xurqk")
+
+[node name="vanishingWall6" type="Node3D" parent="walls/innerVanishingWalls"]
+transform = Transform3D(-1.1138798e-06, 0, -1, 0, 7.9200006, 0, 25.482597, 0, -4.371139e-08, 25.203083, 5.3097086, -52.50953)
+script = ExtResource("5_fdhq5")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="walls/innerVanishingWalls/vanishingWall6"]
+layers = 2
+aabb = AABB(-0.46391067, -0.66325575, -0.60489, 0.5323135, 1.3265115, 1.20978)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="walls/innerVanishingWalls/vanishingWall6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/innerVanishingWalls/vanishingWall6/StaticBody3D"]
+transform = Transform3D(0.9999981, 0, 1.7850277e-11, 0, 0.99998903, 0, -3.058176e-11, 0, 0.9999925, -0.18562698, 0, 0)
+shape = SubResource("BoxShape3D_k5lum")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/innerVanishingWalls/vanishingWall6/StaticBody3D"]
+transform = Transform3D(0.52310824, 0, 0, 0, 1.2045612, 0, 0, 0, 1, -0.18035091, 0, 0)
 mesh = SubResource("BoxMesh_1ms6b")
 
 [node name="lights" type="Node3D" parent="."]
@@ -199,8 +336,36 @@ transform = Transform3D(-4.6078668e-08, 1, 3.0800746e-09, -0.258819, -1.4901159e
 
 [node name="vanishingBox" parent="." instance=ExtResource("3_n4o3k")]
 transform = Transform3D(2.6404576, 0, 0, 0, 2.9142203, 0, 0, 0, 0.18671596, -5.9994755, 2.3311853, 0)
+visible = false
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+visible = false
+occluder = ExtResource("8_xurqk")
+
+[node name="winFloor" type="Node3D" parent="."]
+transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 79.298004, 0, 0.84274435)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="winFloor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="winFloor/StaticBody3D"]
+shape = SubResource("BoxShape3D_xurqk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="winFloor/StaticBody3D"]
+mesh = SubResource("BoxMesh_msd3h")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 7.5, 0.5)
+shape = SubResource("BoxShape3D_msd3h")
 
 [connection signal="screen_entered" from="walls/innerVanishingWalls/vanishingWall1/VisibleOnScreenNotifier3D" to="walls/innerVanishingWalls/vanishingWall1" method="vanish_event"]
 [connection signal="screen_entered" from="walls/innerVanishingWalls/vanishingWall2/VisibleOnScreenNotifier3D" to="walls/innerVanishingWalls/vanishingWall2" method="vanish_event"]
 [connection signal="screen_entered" from="walls/innerVanishingWalls/vanishingWall3/VisibleOnScreenNotifier3D" to="walls/innerVanishingWalls/vanishingWall3" method="vanish_event"]
 [connection signal="screen_entered" from="walls/innerVanishingWalls/vanishingWall4/VisibleOnScreenNotifier3D" to="walls/innerVanishingWalls/vanishingWall4" method="vanish_event"]
+[connection signal="screen_entered" from="walls/innerVanishingWalls/vanishingWall5/VisibleOnScreenNotifier3D" to="walls/innerVanishingWalls/vanishingWall5" method="vanish_event"]
+[connection signal="screen_entered" from="walls/innerVanishingWalls/vanishingWall6/VisibleOnScreenNotifier3D" to="walls/innerVanishingWalls/vanishingWall6" method="vanish_event"]
+[connection signal="area_entered" from="Area3D" to="." method="player_left_maze"]
+[connection signal="area_shape_entered" from="Area3D" to="." method="player_left_maze"]
+[connection signal="body_entered" from="Area3D" to="." method="player_left_maze"]

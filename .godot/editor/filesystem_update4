@@ -1,8 +1,5 @@
-res://scenes/game/maze.tscn
-res://scripts/mainGameScripts/light_control.gd
-res://scenes/menus/main_menu.tscn
-res://scripts/globals/game.gd
-res://scripts/extraGameScripts/main_menu.gd
-res://scripts/mainGameScripts/player.gd
-res://scripts/extraGameScripts/finish_screen.gd
 res://scenes/menus/finish_screen.tscn
+res://scripts/extraGameScripts/finish_screen.gd
+res://scenes/game/maze.tscn
+res://scenes/game/maze_occlusion_data.occ
+res://scripts/mainGameScripts/maze.gd
