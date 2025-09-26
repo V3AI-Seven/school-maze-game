@@ -1,13 +1,24 @@
-[gd_scene load_steps=23 format=3 uid="uid://i4oylgxamlif"]
+[gd_scene load_steps=27 format=3 uid="uid://i4oylgxamlif"]
 
 [ext_resource type="Script" uid="uid://cv64cpu3smqio" path="res://scripts/mainGameScripts/maze.gd" id="1_1ms6b"]
 [ext_resource type="PackedScene" uid="uid://dpp2l2v8ykxt" path="res://scenes/template_objects/scalable_box.tscn" id="1_tg0fq"]
 [ext_resource type="Script" uid="uid://nlh36ifwdd3u" path="res://scripts/mainGameScripts/player.gd" id="2_2avk5"]
+[ext_resource type="AudioStream" uid="uid://c4scpsmwb14do" path="res://sounds/backgroundMusic/05 - Castaways.mp3" id="2_kqsko"]
+[ext_resource type="AudioStream" uid="uid://dx6r58ypeppcv" path="res://sounds/backgroundMusic/14 - Dark Bramble.mp3" id="3_6uxa2"]
 [ext_resource type="PackedScene" uid="uid://drcrhgijfrqo" path="res://scenes/template_objects/vanishing_box.tscn" id="3_n4o3k"]
 [ext_resource type="Texture2D" uid="uid://bwbhaian54dwg" path="res://images/maze_square_10_10_581613901.svg" id="4_k57tn"]
+[ext_resource type="AudioStream" uid="uid://c85rhr8qlcnwj" path="res://sounds/backgroundMusic/09 - The Uncertainty Principle.mp3" id="4_ku5eu"]
 [ext_resource type="Script" uid="uid://blj5wnyf20c" path="res://scripts/extraGameScripts/vanishing_box.gd" id="5_fdhq5"]
 [ext_resource type="Script" uid="uid://cm8rp18ehiqci" path="res://scripts/mainGameScripts/light_control.gd" id="5_k5lum"]
 [ext_resource type="ArrayOccluder3D" uid="uid://hlbht1qlw6fj" path="res://scenes/game/maze_occlusion_data.occ" id="8_xurqk"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_c2q5d"]
+shuffle = true
+fade_time = 0.35
+stream_count = 3
+stream_0 = ExtResource("2_kqsko")
+stream_1 = ExtResource("3_6uxa2")
+stream_2 = ExtResource("4_ku5eu")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rgi5"]
 
@@ -45,6 +56,11 @@ size = Vector3(29, 12, 32)
 
 [node name="game" type="Node3D"]
 script = ExtResource("1_1ms6b")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_c2q5d")
+volume_db = -16.54
+autoplay = true
 
 [node name="floor" parent="." instance=ExtResource("1_tg0fq")]
 transform = Transform3D(128, 0, 0, 0, 1, 0, 0, 0, 128, 0, 0, 0)
@@ -353,10 +369,10 @@ shape = SubResource("BoxShape3D_xurqk")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="winFloor/StaticBody3D"]
 mesh = SubResource("BoxMesh_msd3h")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="winArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="winArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 7.5, 0.5)
 shape = SubResource("BoxShape3D_msd3h")
 
@@ -366,6 +382,6 @@ shape = SubResource("BoxShape3D_msd3h")
 [connection signal="screen_entered" from="walls/innerVanishingWalls/vanishingWall4/VisibleOnScreenNotifier3D" to="walls/innerVanishingWalls/vanishingWall4" method="vanish_event"]
 [connection signal="screen_entered" from="walls/innerVanishingWalls/vanishingWall5/VisibleOnScreenNotifier3D" to="walls/innerVanishingWalls/vanishingWall5" method="vanish_event"]
 [connection signal="screen_entered" from="walls/innerVanishingWalls/vanishingWall6/VisibleOnScreenNotifier3D" to="walls/innerVanishingWalls/vanishingWall6" method="vanish_event"]
-[connection signal="area_entered" from="Area3D" to="." method="player_left_maze"]
-[connection signal="area_shape_entered" from="Area3D" to="." method="player_left_maze"]
-[connection signal="body_entered" from="Area3D" to="." method="player_left_maze"]
+[connection signal="area_entered" from="winArea" to="." method="player_left_maze"]
+[connection signal="area_shape_entered" from="winArea" to="." method="player_left_maze"]
+[connection signal="body_entered" from="winArea" to="." method="player_left_maze"]

@@ -1,5 +1,2 @@
-res://scenes/menus/finish_screen.tscn
-res://scripts/extraGameScripts/finish_screen.gd
 res://scenes/game/maze.tscn
-res://scenes/game/maze_occlusion_data.occ
 res://scripts/mainGameScripts/maze.gd

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4scpsmwb14do"
+path="res://.godot/imported/05 - Castaways.mp3-ad60bbca0639affa56f8d5007d6c3ad0.mp3str"
+
+[deps]
+
+source_file="res://sounds/backgroundMusic/05 - Castaways.mp3"
+dest_files=["res://.godot/imported/05 - Castaways.mp3-ad60bbca0639affa56f8d5007d6c3ad0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

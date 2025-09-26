@@ -1,3 +1,4 @@
+AudioStreamPlayer      - Matches the "sound" keyword.
 AudioStreamPlayer2D      - Matches the "sound" keyword.
 CollisionShape3D
 Area3D
