@@ -1,38 +1,40 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1758844582
-export_presets.cfg::TextFile::-1::1758658474::0::1::::<><><>0<>0<><>::
-icon.svg::CompressedTexture2D::5719076495987887130::1758658474::1758839465::1::::<><><>0<>0<>30f75df3d4289488b28976c69212521a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1758658474::0::1::::<><><>0<>0<><>::
-::res://images/::1758839465
-istockphoto-884015038-612x612.jpg::CompressedTexture2D::1585002772259724853::1758839417::1758839465::1::::<><><>0<>0<>d6384ddaa9695003fca3f3dc1d853fa9<>res://.godot/imported/istockphoto-884015038-612x612.jpg-6d5193eb6f3944c9e15161934914e793.s3tc.ctex::
-maze_square_10_10_581613901.svg::CompressedTexture2D::3933065061251934310::1758754297::1758761290::1::::<><><>0<>0<>d92992973536379fb45ba7b67da4d79d<>res://.godot/imported/maze_square_10_10_581613901.svg-45984d200a28d536a4074e2ce9357b13.s3tc.ctex::
-::res://scenes/::1758839417
-::res://scenes/game/::1758843768
-maze.tscn::PackedScene::622271188995618049::1758843768::0::1::::<><><>0<>0<><>::uid://cv64cpu3smqio::::res://scripts/mainGameScripts/maze.gd<>uid://dpp2l2v8ykxt::::res://scenes/template_objects/scalable_box.tscn<>uid://nlh36ifwdd3u::::res://scripts/mainGameScripts/player.gd<>uid://drcrhgijfrqo::::res://scenes/template_objects/vanishing_box.tscn<>uid://bwbhaian54dwg::::res://images/maze_square_10_10_581613901.svg<>uid://blj5wnyf20c::::res://scripts/extraGameScripts/vanishing_box.gd<>uid://cm8rp18ehiqci::::res://scripts/mainGameScripts/light_control.gd<>uid://hlbht1qlw6fj::::res://scenes/game/maze_occlusion_data.occ
-maze_occlusion_data.occ::ArrayOccluder3D::514104317162119695::1758841446::0::1::::<><><>0<>0<><>::
-::res://scenes/menus/::1758842971
-finish_screen.tscn::PackedScene::1063615385514749889::1758842971::0::1::::<><><>0<>0<><>::uid://6akbxqbyowe4::::res://scripts/extraGameScripts/finish_screen.gd<>uid://cqr4y5jobkhmf::::res://sounds/success-fanfare-trumpets-6185.mp3<>uid://dc2x5m7wn8xo1::::res://sounds/cartoon-fail-trumpet-278822.mp3
-main_menu.tscn::PackedScene::7753633635815876537::1758839417::0::1::::<><><>0<>0<><>::uid://chx1mkbqiwj2e::::res://scripts/extraGameScripts/main_menu.gd
-::res://scenes/template_objects/::1758765468
-player.tscn::PackedScene::4059084239254672616::1758765468::0::1::::<><><>0<>0<><>::uid://d34v3cpb5q2sk::::res://scripts/extraGameScripts/player.gd
-scalable_box.tscn::PackedScene::242491789017692409::1758658474::0::1::::<><><>0<>0<><>::
-vanishing_box.tscn::PackedScene::245813122523034154::1758765468::0::1::::<><><>0<>0<><>::uid://blj5wnyf20c::::res://scripts/extraGameScripts/vanishing_box.gd
-::res://scripts/::1758839417
-::res://scripts/extraGameScripts/::1758842969
-finish_screen.gd::GDScript::2176464341332580749::1758842969::0::1::::<>Control<><>0<>0<><>::
-main_menu.gd::GDScript::5313244560051429806::1758839417::0::1::::<>Control<><>0<>0<><>::
-player.gd::GDScript::9185741815194328986::1758754297::0::1::::<>CharacterBody3D<><>0<>0<><>::
-vanishing_box.gd::GDScript::2749947128797576::1758754298::0::1::::<>Node3D<><>0<>0<><>::
-::res://scripts/globals/::1758839417
-game.gd::GDScript::3612200780197084884::1758839417::0::1::::<>Node<><>0<>0<><>::
-::res://scripts/mainGameScripts/::1758843289
-light_control.gd::GDScript::5684292349489245180::1758839417::0::1::::<>Node3D<><>0<>0<><>::
-maze.gd::GDScript::6312567978581849310::1758843289::0::1::::<>Node3D<><>0<>0<><>::
-player.gd::GDScript::935639784606769520::1758839417::0::1::::<>CharacterBody3D<><>0<>0<><>::
-::res://sounds/::1758843907
-cartoon-fail-trumpet-278822.mp3::AudioStreamMP3::7356828683097976298::1758842938::1758842938::1::::<><><>0<>0<>e0fdfc757dbcec8d96e7f7ae2821ea26<>res://.godot/imported/cartoon-fail-trumpet-278822.mp3-2512675c6c413d04075b688aa9da6691.mp3str::
-success-fanfare-trumpets-6185.mp3::AudioStreamMP3::5932762529499259289::1758842699::1758842700::1::::<><><>0<>0<>45386ea9282f22cb45a1f3206d4d32c6<>res://.godot/imported/success-fanfare-trumpets-6185.mp3-071dedf656e0347012beece0af97604f.mp3str::
-::res://sounds/backgroundMusic/::1758844291
-05 - Castaways.mp3::AudioStreamMP3::6845625818316250376::1758844267::1758844268::1::::<><><>0<>0<>f0e6bebfad8e0fe5feb180944ef2e388<>res://.godot/imported/05 - Castaways.mp3-ad60bbca0639affa56f8d5007d6c3ad0.mp3str::
-09 - The Uncertainty Principle.mp3::AudioStreamMP3::7152050174114687273::1758844219::1758844220::1::::<><><>0<>0<>b5c4956cc02032eff859543e414dc142<>res://.godot/imported/09 - The Uncertainty Principle.mp3-68a2f37d85806b5ddf9b73d2f99b9c8c.mp3str::
-14 - Dark Bramble.mp3::AudioStreamMP3::8838688698857422253::1758844291::1758844291::1::::<><><>0<>0<>76c7e9513f9cfd5b664445458b8dbfb3<>res://.godot/imported/14 - Dark Bramble.mp3-0b675559788a343928a451eb499863dc.mp3str::
+::res://::1758908862
+export_presets.cfg::TextFile::-1::1758908862::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::5719076495987887130::1758656300::1758908665::1::::<><><>0<>0<>30f75df3d4289488b28976c69212521a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1758656300::0::1::::<><><>0<>0<><>::
+::res://exports/::1758656776
+::res://images/::1758911487
+istockphoto-884015038-612x612.jpg::CompressedTexture2D::1585002772259724853::1758823974::1758823982::1::::<><><>0<>0<>d6384ddaa9695003fca3f3dc1d853fa9<>res://.godot/imported/istockphoto-884015038-612x612.jpg-6d5193eb6f3944c9e15161934914e793.s3tc.ctex::
+maze_square_10_10_581613901.svg::CompressedTexture2D::3933065061251934310::1758737353::1758737362::1::::<><><>0<>0<>d92992973536379fb45ba7b67da4d79d<>res://.godot/imported/maze_square_10_10_581613901.svg-45984d200a28d536a4074e2ce9357b13.s3tc.ctex::
+overcast_soil_puresky_4k.exr::CompressedTexture2D::2374212483960804818::1758911485::1758911558::1::::<><><>0<>0<>f62ecbb360e6734bc36e757d4b258865<>res://.godot/imported/overcast_soil_puresky_4k.exr-9fdd9a97f3752f2aa286b498400b8afb.bptc.ctex::
+::res://scenes/::1758823241
+::res://scenes/game/::1758909995
+maze.tscn::PackedScene::622271188995618049::1758909995::0::1::::<><><>0<>0<><>::uid://cv64cpu3smqio::::res://scripts/mainGameScripts/maze.gd<>uid://dpp2l2v8ykxt::::res://scenes/template_objects/scalable_box.tscn<>uid://nlh36ifwdd3u::::res://scripts/mainGameScripts/player.gd<>uid://c4scpsmwb14do::::res://sounds/backgroundMusic/05 - Castaways.mp3<>uid://dx6r58ypeppcv::::res://sounds/backgroundMusic/14 - Dark Bramble.mp3<>uid://drcrhgijfrqo::::res://scenes/template_objects/vanishing_box.tscn<>uid://bwbhaian54dwg::::res://images/maze_square_10_10_581613901.svg<>uid://c85rhr8qlcnwj::::res://sounds/backgroundMusic/09 - The Uncertainty Principle.mp3<>uid://blj5wnyf20c::::res://scripts/extraGameScripts/vanishing_box.gd<>uid://cm8rp18ehiqci::::res://scripts/mainGameScripts/light_control.gd<>uid://hlbht1qlw6fj::::res://scenes/game/maze_occlusion_data.occ
+maze_occlusion_data.occ::ArrayOccluder3D::514104317162119695::1758908650::0::1::::<><><>0<>0<><>::
+::res://scenes/menus/::1758908931
+finish_screen.tscn::PackedScene::1063615385514749889::1758908931::0::1::::<><><>0<>0<><>::uid://6akbxqbyowe4::::res://scripts/extraGameScripts/finish_screen.gd<>uid://cqr4y5jobkhmf::::res://sounds/success-fanfare-trumpets-6185.mp3<>uid://dc2x5m7wn8xo1::::res://sounds/cartoon-fail-trumpet-278822.mp3
+main_menu.tscn::PackedScene::7753633635815876537::1758823853::0::1::::<><><>0<>0<><>::uid://chx1mkbqiwj2e::::res://scripts/extraGameScripts/main_menu.gd
+::res://scenes/template_objects/::1758909998
+player.tscn::PackedScene::4059084239254672616::1758814897::0::1::::<><><>0<>0<><>::uid://d34v3cpb5q2sk::::res://scripts/extraGameScripts/player.gd
+scalable_box.tscn::PackedScene::242491789017692409::1758656300::0::1::::<><><>0<>0<><>::
+vanishing_box.tscn::PackedScene::245813122523034154::1758909998::0::1::::<><><>0<>0<><>::uid://blj5wnyf20c::::res://scripts/extraGameScripts/vanishing_box.gd
+::res://scripts/::1758823290
+::res://scripts/extraGameScripts/::1758908931
+finish_screen.gd::GDScript::2176464341332580749::1758908931::0::1::::<>Control<><>0<>0<><>::
+main_menu.gd::GDScript::5313244560051429806::1758824906::0::1::::<>Control<><>0<>0<><>::
+player.gd::GDScript::9185741815194328986::1758814897::0::1::::<>CharacterBody3D<><>0<>0<><>::
+vanishing_box.gd::GDScript::2749947128797576::1758814897::0::1::::<>Node3D<><>0<>0<><>::
+::res://scripts/globals/::1758825135
+game.gd::GDScript::3612200780197084884::1758825135::0::1::::<>Node<><>0<>0<><>::
+::res://scripts/mainGameScripts/::1758908650
+light_control.gd::GDScript::5684292349489245180::1758823765::0::1::::<>Node3D<><>0<>0<><>::
+maze.gd::GDScript::6312567978581849310::1758908650::0::1::::<>Node3D<><>0<>0<><>::
+player.gd::GDScript::935639784606769520::1758825538::0::1::::<>CharacterBody3D<><>0<>0<><>::
+::res://sounds/::1758908650
+cartoon-fail-trumpet-278822.mp3::AudioStreamMP3::7356828683097976298::1758908650::1758908650::1::::<><><>0<>0<>e0fdfc757dbcec8d96e7f7ae2821ea26<>res://.godot/imported/cartoon-fail-trumpet-278822.mp3-2512675c6c413d04075b688aa9da6691.mp3str::
+success-fanfare-trumpets-6185.mp3::AudioStreamMP3::5932762529499259289::1758908650::1758908650::1::::<><><>0<>0<>45386ea9282f22cb45a1f3206d4d32c6<>res://.godot/imported/success-fanfare-trumpets-6185.mp3-071dedf656e0347012beece0af97604f.mp3str::
+::res://sounds/backgroundMusic/::1758908650
+05 - Castaways.mp3::AudioStreamMP3::6845625818316250376::1758908650::1758908650::1::::<><><>0<>0<>f0e6bebfad8e0fe5feb180944ef2e388<>res://.godot/imported/05 - Castaways.mp3-ad60bbca0639affa56f8d5007d6c3ad0.mp3str::
+09 - The Uncertainty Principle.mp3::AudioStreamMP3::7152050174114687273::1758908650::1758908650::1::::<><><>0<>0<>b5c4956cc02032eff859543e414dc142<>res://.godot/imported/09 - The Uncertainty Principle.mp3-68a2f37d85806b5ddf9b73d2f99b9c8c.mp3str::
+14 - Dark Bramble.mp3::AudioStreamMP3::8838688698857422253::1758908650::1758908650::1::::<><><>0<>0<>76c7e9513f9cfd5b664445458b8dbfb3<>res://.godot/imported/14 - Dark Bramble.mp3-0b675559788a343928a451eb499863dc.mp3str::

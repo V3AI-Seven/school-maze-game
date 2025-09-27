@@ -10,7 +10,12 @@ func time_convert(time_in_sec):
 	#returns a string with the format "HH:MM:SS"
 	return "%02d:%02d:%02d" % [hours, minutes, seconds]
 
+func play_again() -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
+
 func _ready() -> void:
+	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if Game.game_won:
 		$SuccessFanfareTrumpets6185.play()

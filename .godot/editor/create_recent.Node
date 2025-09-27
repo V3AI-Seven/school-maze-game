@@ -1,3 +1,5 @@
+Button
+WorldEnvironment
 AudioStreamPlayer      - Matches the "sound" keyword.
 AudioStreamPlayer2D      - Matches the "sound" keyword.
 CollisionShape3D
@@ -6,9 +8,7 @@ OccluderInstance3D
 Label
 CanvasLayer
 OptionButton
-Button
 Node3D
 DirectionalLight3D
 MeshInstance3D
 VisibleOnScreenNotifier3D
-Marker3D

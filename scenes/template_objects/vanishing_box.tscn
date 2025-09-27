@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://blj5wnyf20c" path="res://scripts/extraGameScripts/vanishing_box.gd" id="1_qcpt8"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hwjsw"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqsko"]
+size = Vector3(1, 1.0977783, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_sgew4"]
+[sub_resource type="BoxMesh" id="BoxMesh_6uxa2"]
 
 [node name="vanishingBox" type="Node3D"]
 script = ExtResource("1_qcpt8")
@@ -15,10 +16,10 @@ aabb = AABB(-0.633865, -0.66325575, -0.60489, 1.26773, 1.3265115, 1.20978)
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_hwjsw")
+shape = SubResource("BoxShape3D_kqsko")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1.2045612, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_sgew4")
+mesh = SubResource("BoxMesh_6uxa2")
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="vanish_event"]

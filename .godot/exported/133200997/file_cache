@@ -1,3 +1,6 @@
-res://scenes/game/maze.tscn::121b87a829f78c6d6e83de9e21b2cf6e::1758657009::res://.godot/exported/133200997/export-8e4c2d6056b5ce8a48e3306cecbb6647-maze.scn
-res://scenes/template_objects/player.tscn::7cf4068847cddea96656187632872887::1758656300::res://.godot/exported/133200997/export-e83dd6fd02786bf7afa41d431db65c2c-player.scn
+res://scenes/game/maze.tscn::e17b84c970a21e94900a87cec7717ab8::1758908675::res://.godot/exported/133200997/export-8e4c2d6056b5ce8a48e3306cecbb6647-maze.scn
+res://scenes/template_objects/player.tscn::0cfceb39ac6442601e03cca647b30eb1::1758814897::res://.godot/exported/133200997/export-e83dd6fd02786bf7afa41d431db65c2c-player.scn
 res://scenes/template_objects/scalable_box.tscn::ce3ab3e382d1e88cf29b0128e9fcf4f8::1758656300::res://.godot/exported/133200997/export-9ee0054cb905a27d12a9b440b282f286-scalable_box.scn
+res://scenes/menus/finish_screen.tscn::9f98b3e1476e473abf9bec2d3c8c63cb::1758908650::res://.godot/exported/133200997/export-396a940576c048a306ce65f80ad2ff16-finish_screen.scn
+res://scenes/menus/main_menu.tscn::c1e3c51b409abd6f72191758848cdb3a::1758823853::res://.godot/exported/133200997/export-f47f7d670953862d9d781ab785fd547c-main_menu.scn
+res://scenes/template_objects/vanishing_box.tscn::fcb16e9d8bab7f6a30009184735926e4::1758814897::res://.godot/exported/133200997/export-9876629ce9b23131751e175c23f83296-vanishing_box.scn

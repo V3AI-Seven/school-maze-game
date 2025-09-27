@@ -1,2 +1,5 @@
 res://scenes/game/maze.tscn
+res://scenes/menus/finish_screen.tscn
+res://scripts/extraGameScripts/finish_screen.gd
+res://scenes/template_objects/vanishing_box.tscn
 res://scripts/mainGameScripts/maze.gd

@@ -40,3 +40,14 @@ stream = ExtResource("2_exe03")
 [node name="CartoonFailTrumpet278822" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(576, 304)
 stream = ExtResource("3_87cp2")
+
+[node name="playAgain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 336.0
+offset_right = 680.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 32
+text = "Play Again"
+
+[connection signal="pressed" from="playAgain" to="." method="play_again"]
